@@ -1,0 +1,54 @@
+{
+    "description": "create by zhizhuo ;use vue3 and ant-vue to build this project",
+    "manifest_version": 3,
+    "name": "my-chrome-vue",
+    "version": "1.0.0",
+    "action": {
+        "default_icon": {
+            "19": "assets/logo.png",
+            "38": "assets/logo.png"
+        },
+        "default_popup": "popup.html",
+        "default_title": "my-chrome-vue"
+    },
+    "background": {
+        "service_worker": "js/background.js"
+      },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "css": [
+                "css/chunk-vendors.css"
+            ],
+            "js": [
+                "js/chunk-vendors.js",
+                "js/inject.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "host_permissions": ["http://*/*", "https://*/*"],
+    "permissions": [
+        "contextMenus",
+        "tabs",
+        "notifications",
+        "webRequest",
+        "storage"
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'",
+        "sandbox": "sandbox allow-scripts; script-src 'self'; object-src 'self'"
+    },
+    "web_accessible_resources": [
+        {
+            "resources":["js/inject.js"],
+            "matches":[
+                "http://*/*",
+                "https://*/*"
+            ]
+        }
+    ]
+}
