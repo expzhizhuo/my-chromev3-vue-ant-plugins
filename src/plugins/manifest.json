@@ -21,7 +21,7 @@
                 "https://*/*"
             ],
             "css": [
-                "css/chunk-vendors.css"
+                ""
             ],
             "js": [
                 "js/chunk-vendors.js",
