@@ -53,6 +53,8 @@ module.exports = {
  productionSourceMap: false,
  // 配置 content.js background.js
  configureWebpack: {
+  devtool: 'cheap-module-source-map', 
+  devServer: { hot: false, liveReload: true },
   entry: {
    background: "./src/background/main.js"
   },
