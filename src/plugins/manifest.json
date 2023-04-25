@@ -13,16 +13,14 @@
     },
     "background": {
         "service_worker": "js/background.js"
-      },
+    },
     "content_scripts": [
         {
             "matches": [
                 "http://*/*",
                 "https://*/*"
             ],
-            "css": [
-                ""
-            ],
+            "css": [],
             "js": [
                 "js/chunk-vendors.js",
                 "js/inject.js"
@@ -30,7 +28,10 @@
             "run_at": "document_end"
         }
     ],
-    "host_permissions": ["http://*/*", "https://*/*"],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
     "permissions": [
         "contextMenus",
         "tabs",
@@ -44,8 +45,10 @@
     },
     "web_accessible_resources": [
         {
-            "resources":["js/inject.js"],
-            "matches":[
+            "resources": [
+                "js/inject.js"
+            ],
+            "matches": [
                 "http://*/*",
                 "https://*/*"
             ]
